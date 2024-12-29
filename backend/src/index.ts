@@ -1,6 +1,9 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config"
+import connectedDB from "./db";
+
+
 
 const app = express();
 app.use(express.json());
@@ -14,4 +17,6 @@ app.get("/api/test", async (req: Request, res: Response) => {
 
 app.listen(8000, () => {
     console.log("Server running on localhost:8000");
+    connectedDB()
 })
+
