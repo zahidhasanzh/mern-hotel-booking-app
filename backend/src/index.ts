@@ -1,6 +1,7 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
-import "dotenv/config"
+import dotenv from "dotenv";
+dotenv.config({ path: process.env.DOTENV_CONFIG_PATH || '.env' }); 
 import connectedDB from "./db";
 import userRoutes from "./routes/users"
 import authRoutes from "./routes/auth"
