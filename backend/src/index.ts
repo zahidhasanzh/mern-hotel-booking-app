@@ -6,6 +6,7 @@ import connectedDB from "./db";
 import userRoutes from "./routes/users"
 import authRoutes from "./routes/auth"
 import cookieParser from "cookie-parser"
+import path from "path"
 
 
 const app = express();
@@ -16,6 +17,8 @@ app.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
 }))
+
+app.use(express.static(path.join(__dirname, "../../frontend/dist")))
 
 
 
