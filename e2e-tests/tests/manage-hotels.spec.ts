@@ -63,7 +63,7 @@ test("should allow user to add a hotel", async ({ page }) => {
     await expect(
       page.getByRole("link", { name: "View Details" }).first()
     ).toBeVisible();
-    await expect(page.getByRole("link", { name: "Add Hotel" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Add Hotel" }).first()).toBeVisible();
   });
 
   test("should edit hotel", async ({ page }) => {
